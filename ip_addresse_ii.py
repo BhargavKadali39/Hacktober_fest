@@ -1,6 +1,6 @@
 
 import socket
-
+#socket project
 print(socket.getfqdn())
 name = input('Enter host name of your choise\n')
 socket.sethostname(name)
