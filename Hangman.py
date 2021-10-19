@@ -7,9 +7,7 @@ def film(f):
     check=[]
     while len(check)<(len(word)/2):
         wordindex=randint(0,len(word)-1)
-        if wordindex in check:
-            pass
-        else:
+        if wordindex not in check:
             word[wordindex]='_'
         check.append(wordindex)
     s=''
@@ -62,60 +60,7 @@ while play:
             lives -=1
             print('\nOops Wrong answer')
             print('Try again')
-            if lives==9:
-                turtle.color('brown')
-                turtle.pensize(70)
-                turtle.backward(300)
-                turtle.forward(40)
-            if lives==8:
-                turtle.pensize(30)
-                turtle.color('black')               
-                turtle.left(90)
-                turtle.forward(350)
-            if lives==7:
-                turtle.pensize(30)
-                turtle.color('black')
-                turtle.right(90)
-                turtle.forward(120)
-            if lives==6:
-                turtle.pensize(10)
-                turtle.color('black')
-                turtle.right(90)
-                turtle.forward(40)
-                turtle.right(90)
-                turtle.forward(0)
-            if lives==5:
-                turtle.pensize(15)
-                turtle.color('white')
-                turtle.fillcolor('white')
-                turtle.circle(20)
-                turtle.circle(20,180)
-            if lives==4:
-                turtle.right(90)
-                turtle.pensize(15)
-                turtle.color('white')
-                turtle.forward(120)
-            if lives==3:
-                turtle.pensize(15)
-                turtle.color('white')
-                turtle.backward(60)
-                turtle.left(135)
-                turtle.forward(60)
-            if lives==2:
-                turtle.pensize(15)
-                turtle.color('white')
-                turtle.backward(60)
-                turtle.left(90)
-                turtle.forward(60)
-                turtle.backward(60)
-            if lives==1:
-                turtle.pensize(15)
-                turtle.color('white')
-                turtle.left(135)
-                turtle.forward(60)
-                turtle.left(45)
-                turtle.forward(60)
-            elif lives==0:
+            if lives == 0:
                 turtle.pensize(15)
                 turtle.color('white')
                 turtle.backward(60)
@@ -125,10 +70,10 @@ while play:
                 turtle.penup()
                 turtle.goto(0,-240)
                 turtle.pendown()
-                turtle.color('yellow')               
+                turtle.color('yellow')
                 turtle.write("\n!! GAME OVER !!", font=style, align='center')
                 turtle.pu()
-                turtle.goto(0,-280)                
+                turtle.goto(0,-280)
                 turtle.write("\n!! BETTER LUCK NEXT TIME !! ", font=style, align='center')
                 turtle.pu()
                 turtle.goto(0,-320)
@@ -138,6 +83,59 @@ while play:
                 turtle.goto(0,-360)
                 turtle.write(str(show), font=style, align='center')
                 print('GAME OVER - BETTER LUCK NEXT TIME\nThe word was',show)
+            elif lives == 1:
+                turtle.pensize(15)
+                turtle.color('white')
+                turtle.left(135)
+                turtle.forward(60)
+                turtle.left(45)
+                turtle.forward(60)
+            elif lives == 2:
+                turtle.pensize(15)
+                turtle.color('white')
+                turtle.backward(60)
+                turtle.left(90)
+                turtle.forward(60)
+                turtle.backward(60)
+            elif lives == 3:
+                turtle.pensize(15)
+                turtle.color('white')
+                turtle.backward(60)
+                turtle.left(135)
+                turtle.forward(60)
+            elif lives == 4:
+                turtle.right(90)
+                turtle.pensize(15)
+                turtle.color('white')
+                turtle.forward(120)
+            elif lives == 5:
+                turtle.pensize(15)
+                turtle.color('white')
+                turtle.fillcolor('white')
+                turtle.circle(20)
+                turtle.circle(20,180)
+            elif lives == 6:
+                turtle.pensize(10)
+                turtle.color('black')
+                turtle.right(90)
+                turtle.forward(40)
+                turtle.right(90)
+                turtle.forward(0)
+            elif lives == 7:
+                turtle.pensize(30)
+                turtle.color('black')
+                turtle.right(90)
+                turtle.forward(120)
+            elif lives == 8:
+                turtle.pensize(30)
+                turtle.color('black')
+                turtle.left(90)
+                turtle.forward(350)
+            elif lives == 9:
+                turtle.color('brown')
+                turtle.pensize(70)
+                turtle.backward(300)
+                turtle.forward(40)
     option=input('\nDo you want to play again :\nY/N : ')
     if option.lower()=='y':
         turtle.reset()
